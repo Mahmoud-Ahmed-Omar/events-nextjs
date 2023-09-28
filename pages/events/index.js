@@ -1,8 +1,15 @@
-export default function AllEventsPage()
-{
+import { Fragment } from "react";
+import EventList from "@/components/events/event-list";
+import EventsSearch from "@/components/events/events-search";
+import { getAllEvents } from "@/dummy-data";
+
+
+export default function AllEventsPage() {
+    const events = getAllEvents();
     return (
-        <div>
-            <h1>All Events</h1>
-        </div>
+        <Fragment>
+            <EventsSearch />
+            <EventList items={events}/>
+        </Fragment>
     );
 }
